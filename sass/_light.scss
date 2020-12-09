@@ -1,0 +1,49 @@
+body.light {
+  background: $Very-Light-Grayish-Blue;
+
+  //   dark mode main stylings
+  main {
+    .area-two {
+      box-shadow: 0rem 0.5rem 3rem #999;
+    }
+
+    .help {
+      color: $Dark-Grayish-Blue;
+    }
+  }
+
+  //   dark mode todo list section
+  section.todo-list .todo-item {
+    border-bottom: thin solid $Very-Light-Grayish-Blue;
+
+    &.completed .todo-title {
+      color: $Light-Grayish-Blue;
+    }
+  }
+
+  //   dark mode filter section
+  section.filter {
+    background: $Very-Light-Gray;
+    color: $Dark-Grayish-Blue;
+
+    button.filter-btn:hover {
+      color: $Very-Dark-Blue;
+    }
+  }
+
+  //   dark mode common section
+  .todo-box {
+    background: $Very-Light-Gray;
+    color: $Very-Dark-Blue;
+
+    .check {
+      &::before {
+        background: $Very-Light-Grayish-Blue;
+      }
+
+      span {
+        background: $Very-Light-Gray;
+      }
+    }
+  }
+}

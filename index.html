@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      white-space: pre-wrap;
+      color: hsl(233, 14%, 35%);
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body class="dark">
+  <picture>
+    <source media="(max-width: 375px)" srcset="./images/bg-mobile-dark.jpg">
+    <img src="./images/bg-desktop-dark.jpg" alt="background image" id="headerBg">
+  </picture <!-- main app section -->
+  <main>
+
+    <div class="area area-one">
+      <!-- header section -->
+      <header>
+        <h1>Todo</h1>
+        <button id="timeToggle" name="undefined">
+          <object data="./images/icon-sun.svg" type="image/svg+xml">
+            your browser does not support this svg
+          </object>
+        </button>
+      </header>
+
+      <!-- new todo form section -->
+      <form id="todoForm" class="todo-form todo-box">
+        <div class="check">
+          <input type="checkbox" title="undefined" disabled>
+          <span></span>
+        </div>
+
+        <input type="text" id="inputedTodo" title="input new task" placeholder="Enter new task..." autocomplete="off">
+
+        <button type="submit" style="display: none;"></button>
+      </form>
+    </div>
+
+    <div class="area area-two">
+      <!-- Todo List section -->
+      <section id="todoList" class="todo-list">
+        <!-- <div class="todo-item todo-box" draggable="true">
+          <div class="check">
+            <input type="checkbox" title="mark task complete" class="mark-complete">
+            <span></span>
+          </div>
+
+          <p class="todo-title">Do something new</p>
+
+          <button class="close" name="undefined">
+            <object data="./images/icon-cross.svg" type="image/svg+xml">
+              your browser does not support this svg
+            </object>
+          </button>
+        </div>
+
+        <div class="todo-item todo-box" draggable="true">
+          <div class="check">
+            <input type="checkbox" title="mark task complete" class="mark-complete">
+            <span></span>
+          </div>
+
+          <div class="todo-title">Study for pop quiz</div>
+
+          <button class="close" name="undefined">
+            <object data="./images/icon-cross.svg" type="image/svg+xml">
+              your browser does not support this svg
+            </object>
+          </button>
+        </div> -->
+      </section>
+
+      <!-- filter section -->
+      <section class="filter">
+        <p><span id="itemCount">0</span> items left</p>
+
+        <div class="toggles">
+          <button id="allBtn" class="filter-btn on" name="undefined">All</button>
+          <button id="activeBtn" class="filter-btn" name="undefined">Active</button>
+          <button id="completedBtn" class="filter-btn" name="undefined">Completed</button>
+        </div>
+
+        <button id="clearAllBtn" class="filter-btn" name="undefined">Clear Completed</button>
+      </section>
+    </div>
+
+    <!-- help section -->
+    <p class="help">Drag and drop to reorder list</p>
+  </main>
+
+  <!-- extra -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Onyekwere Precious (Yellow May)</a>.
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

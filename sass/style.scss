@@ -1,0 +1,257 @@
+@import "base";
+@import "dark";
+@import "light";
+
+body {
+  font-family: $Font-stack;
+  font-size: $Font-size;
+
+  min-height: 100vh;
+  min-width: 100%;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  picture {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+// main app section stylings
+main {
+  width: $Main-width;
+  margin: 0 auto;
+  padding-top: 4.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  .area {
+    display: flex;
+    flex-direction: column;
+
+    &-one {
+      gap: 2.5rem;
+      height: 8rem;
+    }
+
+    &-two {
+      border-radius: 0.3rem;
+    }
+  }
+
+  .help {
+    padding: 1rem;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: $Font-size-min;
+  }
+}
+
+// header section
+header {
+  width: $Main-width;
+  min-height: 2.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    color: $Very-Light-Gray;
+  }
+
+  button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+
+    object {
+      pointer-events: none;
+    }
+  }
+}
+
+// form section
+form.todo-form {
+  min-width: $Main-width;
+  border-radius: 0.3rem;
+
+  input[type="text"] {
+    width: calc($Main-width - 3.7rem);
+    height: inherit;
+    background: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+    caret-color: $Bright-Blue;
+    font-size: inherit;
+    font-family: inherit;
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+}
+
+// todo list section
+section.todo-list {
+  min-width: $Main-width;
+  height: max-content;
+  overflow: hidden;
+
+  .todo-item {
+    cursor: pointer;
+
+    &.dragging {
+      opacity: 0.5;
+      cursor: none;
+    }
+
+    &.completed .todo-title {
+      text-decoration: line-through;
+    }
+
+    &:hover button.close {
+      opacity: 1;
+    }
+
+    &:first-child {
+      border-top-left-radius: 0.3rem;
+      border-top-right-radius: 0.3rem;
+    }
+
+    .check:hover::before {
+      background: $Check-Background;
+    }
+
+    .todo-title {
+      min-width: 24.5rem;
+      pointer-events: none;
+    }
+
+    button.close {
+      width: fit-content;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: 0.3s;
+
+      object {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+// filter section
+section.filter {
+  min-width: $Main-width;
+  padding: 1rem;
+  font-size: $Font-size-min;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .toggles {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  button.filter-btn {
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: inherit;
+
+    &.on {
+      color: $Bright-Blue;
+    }
+  }
+}
+
+// common
+.todo-box {
+  width: $Main-width;
+  height: 3.5rem;
+  padding: 0.5rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+
+  .check {
+    min-width: 3.7rem;
+    height: inherit;
+    border-radius: 50%;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: inherit;
+    }
+
+    input[type="checkbox"] {
+      width: 1.5rem;
+      height: 1.5rem;
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked + span {
+        width: 1.5rem;
+        height: 1.5rem;
+        background: $Check-Background,
+          url(./../images/icon-check.svg) no-repeat center;
+        background-blend-mode: lighten;
+      }
+    }
+
+    span {
+      width: 1.25rem;
+      height: 1.25rem;
+      position: absolute;
+      pointer-events: none;
+      border-radius: inherit;
+    }
+  }
+}
+
+@import "mobile";
