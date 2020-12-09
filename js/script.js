@@ -63,7 +63,7 @@ const createTodoItem = (todo) => {
 
   let closeBtn = document.createElement("button");
   closeBtn.className = "close";
-  closeBtn.name = "undefined";
+  closeBtn.title = "delete todo task";
   let closeBtnObject = document.createElement("object");
   closeBtnObject.data = "./images/icon-cross.svg";
   closeBtnObject.type = "image/svg+xml";
