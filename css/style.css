@@ -343,8 +343,7 @@ section.filter button.filter-btn.on {
     gap: 1.5rem;
   }
   main .help {
-    position: relative;
-    top: 4rem;
+    display: none;
   }
   header {
     width: 100%;

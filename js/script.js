@@ -1,7 +1,12 @@
+// state arrays
+// htmlTodos for all todo task items
+// htmlActiveTodos for all active todo task items
+// htmlCompletedTodos for all completed todo task items
 let htmlTodos = [];
 let htmlActiveTodos = [];
 let htmlCompletedTodos = [];
 
+// array of hardcoded todo task
 const hardCodedTodos = [
   { id: "1", completed: true, title: "Completed online javascript course" },
   { id: "2", completed: false, title: "Jog around the park 3x" },
@@ -11,6 +16,14 @@ const hardCodedTodos = [
   { id: "6", completed: false, title: "Complete Todo App on Frontend Mentor" },
 ];
 
+// reusuable functions
+// check the number active todo item and update the count
+// reusuable filter method to switch the active state from "all", "active" and completed
+// create a new todo Dom node Item that can be use for appending into the dom
+// add a new todo Dom node to one of the following "state" arrays, "htmlTodos", "htmlActiveTodos" or "htmlCompletedTodso"
+// update the position of the elements after a drag event takes place
+// update the "state" arrays "htmlActiveTodos" and "htmlCompletedTodos" from the "htmlTodos" array
+// render method that accepts one of the "state" arrays to render on the screen as the todo task items
 const checkCount = () => {
   if (todoList.querySelectorAll(".todo-item:not(.completed)").length !== 0) {
     itemCount.textContent = todoList.querySelectorAll(
@@ -103,6 +116,15 @@ const render = (htmlArr) => {
   checkCount();
 };
 
+// Todo Ui class
+// add new todo method
+// load the hardcoded todos
+// dark and light mode toggle method
+// desktop drag event
+// mark todo task complete method
+// remove todo from the array
+// filter methods
+// clear all completed todo task from the array method
 class UITodo {
   constructor() {
     this.addNewTodo();
@@ -305,6 +327,7 @@ class UITodo {
   };
 }
 
+// Intantiation of a new UI todo class making all method available on DOM fully being loaded
 document.addEventListener("DOMContentLoaded", () => {
   new UITodo();
 });
